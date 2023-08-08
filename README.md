@@ -1,9 +1,9 @@
 # Rareskills Ppgradable Proxy Contracts Questions
 
 1. The OZ upgrade tool for hardhat defends against 6 kinds of mistakes. What are they and why do they matter?
- - constructor() in the implementation contract. When we have a constructor inside the implementation contract it sets the state variables inside the implementation contract but that is not reflected inside the proxy contract.
- - assigning initial values to state variables inside the implementation contract. This will have the same effect as using the contructor.
- - being able to call initialize() more than once. If the initialization function from the implementation contract can be called more than once, it can affect the state variables inside the proxy contract/s.
+    - constructor() in the implementation contract. When we have a constructor inside the implementation contract it sets the state variables inside the implementation contract but that is not reflected inside the proxy contract.
+    - assigning initial values to state variables inside the implementation contract. This will have the same effect as using the contructor.
+    - being able to call initialize() more than once. If the initialization function from the implementation contract can be called more than once, it can affect the state variables inside the proxy contract/s.
  - selfdestruct() in the implementation contract. If the implementation contract is deleted the proxy will delegatecall to non-existing contract and every call to the proxy contract will fail.
  - delegatecall() in the implementation contract. If the implementation contract delegates call to some other contract, this other contract can have selfdestruct in it, and because of delegatecall the implementation contract will be destroyed.
  - storage layout reordering between different implementation version contracts. If the order of the state variables is changed in the implementation contract, this may cause assigning of unexpected values to the state variables of the proxy.
