@@ -20,8 +20,9 @@
     }
 
     contract Child is Base {
-			uint256 child;
-		}
+      uint256 child;
+    }
+
     ```
     If Base is modified to add an extra variable:
 
