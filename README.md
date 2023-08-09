@@ -1,4 +1,4 @@
-# Rareskills Ppgradable Proxy Contracts Questions
+# Rareskills Upgradable Proxy Contracts Questions
 
 1. The OZ upgrade tool for hardhat defends against 6 kinds of mistakes. What are they and why do they matter?
     - constructor() in the implementation contract. When we have a constructor inside the implementation contract it sets the state variables inside the implementation contract but that is not reflected inside the proxy contract.
